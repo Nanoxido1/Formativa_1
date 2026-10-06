@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Formativa</title>
+    <style>
+         
+        .formulario{
+            background-color: #f0f0f0;
+            padding: 20px;
+            width: 500px;
+            margin-bottom: 15px;
+        }
+        
+        .entrada-texto {
+            width: 30%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+       
+        #resultado {
+            border: 2px solid green;
+            background-color: lightgreen;
+            padding: 15px;
+            width: 200px;
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="formulario">
+        <h3>Formulario Prueba Formativa</h3>
+        
+        
+        <input type="text" id="nom" class="entrada-texto" placeholder="Nombre completo" required><br>
+        <input type="email" id="mail" class="entrada-texto" placeholder="Correo electronico" required><br>
+        <input type="number" id="edad" class="entrada-texto" placeholder="Edad" required><br>
+        <input type="text" id="ciudad" class="entrada-texto" placeholder="Ciudad" required><br>
+
+       
+        <button type="button" onclick="mostrarDatos()">Enviar Datos</button>
+    </div>
+
+   
+    <div id="resultado"></div>
+
+    
+    <script>
+       
+        function mostrarDatos() {
+            
+            var nombre = document.getElementById("nom").value;
+            var correo = document.getElementById("mail").value;
+            var edad = document.getElementById("edad").value;
+            var ciudad = document.getElementById("ciudad").value;
+
+            
+            if(nombre == "" || correo == "" || edad == "" || ciudad == "") {
+                alert("Debe llenar todos los campos");
+                return;
+            }
+
+            
+            var cajaResultado = document.getElementById("resultado");
+            cajaResultado.innerHTML = "<h4>Datos capturados con exito</h4>" +
+                                      "<p>Nombre: " + nombre + "</p>" +
+                                      "<p>Correo: " + correo + "</p>" +
+                                      "<p>Edad: " + edad + "</p>" +
+                                      "<p>Ciudad: " + ciudad + "</p>";
+
+           
+            cajaResultado.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
